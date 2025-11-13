@@ -17,3 +17,6 @@ Goodbye UI/UX, hello curl.
 - figure out API versioning
 - figure out devops pipeline
 
+
+## Notes
+HTTP → handler → service → repo → DB
