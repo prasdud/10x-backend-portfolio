@@ -12,9 +12,8 @@ Goodbye UI/UX, hello curl.
 ## TODO
 
 - high level system design
-- figure out DB, heart says postgres, brain says sqlite
-- figure out Gin
-- figure out API versioning
+- figure out data storage lifecycle, easy way to update data
+- figure out path and query params in Gin
 - figure out devops pipeline
 
 
