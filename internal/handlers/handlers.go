@@ -9,7 +9,7 @@ func Ping(c *gin.Context) {
 }
 
 func GetResume(c *gin.Context) {
-	c.File("https://prasdud.com/314159265358.pdf")
+	c.File("./static/resume.pdf")
 }
 
 func GetSkills(c *gin.Context) {
