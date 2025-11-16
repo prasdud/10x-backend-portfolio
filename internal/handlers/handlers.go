@@ -27,10 +27,16 @@ func GetProjects(c *gin.Context) {
 }
 
 func GetExperience(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"Omni-Tech Solutions": "SWE Intern",
-		"Dragbin":             "SWE Intern",
-	})
+	id := c.Param("id")
+	experiences := map[string]string{
+		"omni-tech": "Omni-Tech Solutions: SWE Intern",
+		"dragbin":   "Dragbin: SWE Intern",
+	}
+	if exp, ok := experiences[id]; ok {
+		c.JSON(200, gin.H{"experience": exp})
+	} else {
+		c.JSON(404, gin.H{"error": "Experience not found"})
+	}
 }
 
 func GetContact(c *gin.Context) {

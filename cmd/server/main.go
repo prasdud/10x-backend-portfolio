@@ -14,7 +14,7 @@ func main() {
 	v1.GET("/resume", handlers.GetResume)
 	v1.GET("/skills", handlers.GetSkills)
 	v1.GET("/projects", handlers.GetProjects)
-	v1.GET("/experience", handlers.GetExperience)
+	v1.GET("/experience/:id", handlers.GetExperience)
 	v1.GET("/contact", handlers.GetContact)
 	v1.GET("/blog", handlers.GetBlog)
 	v1.GET("/about", handlers.GetAbout)
