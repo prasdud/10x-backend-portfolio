@@ -11,11 +11,10 @@ Goodbye UI/UX, hello curl.
 
 ## TODO
 
-- high level system design
-- figure out data storage lifecycle, easy way to update data
-- figure out path and query params in Gin
-- figure out devops pipeline
+- setup query params for other stuff
+- do some cool backend stuff, thinking of bouncing a packet around the globe
+- setup docker and set up as systemd on vps, setup a subdomain for this
 
 
 ## Notes
-HTTP → handler → service → repo → DB
+HTTP -> handler -> store -> DB -> response
