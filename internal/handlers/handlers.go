@@ -69,3 +69,17 @@ func GetEasterEgg2(c *gin.Context) {
 		"Easter egg": "#2",
 	})
 }
+
+func Help(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"/resume":         "Returns resume PDF",
+		"/skills":         "Returns skills JSON",
+		"/projects":       "Returns projects JSON",
+		"/experience/:id": "Returns experience details for given id",
+		"/contact":        "Returns contact information JSON",
+		"/blog":           "Redirects to blog URL",
+		"/about":          "Returns about information JSON",
+		"/easteregg1":     "Returns Easter Egg 1 JSON",
+		"/easteregg2":     "Returns Easter Egg 2 JSON",
+	})
+}

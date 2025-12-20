@@ -20,6 +20,7 @@ func main() {
 	v1.GET("/about", handlers.GetAbout)
 	v1.GET("/easteregg1", handlers.GetEasterEgg1)
 	v1.GET("/easteregg2", handlers.GetEasterEgg2)
+	v1.GET("/help", handlers.Help)
 
 	r.Run(":7741")
 }
