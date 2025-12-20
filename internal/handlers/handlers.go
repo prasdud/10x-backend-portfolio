@@ -2,41 +2,32 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/prasdud/10x-backend-portfolio/internal/store"
 )
 
 func Ping(c *gin.Context) {
-	c.JSON(200, gin.H{"message": "pong"})
+	c.JSON(200, gin.H{"message": store.Data.Ping.Message})
 }
 
 func GetResume(c *gin.Context) {
-	c.File("./static/resume.pdf")
+	c.File("../../static/resume.pdf")
 }
 
 func GetSkills(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"Python": "Master",
-		"Go":     "Proficient",
-	})
+	c.JSON(200, store.Data.Skills)
 }
 
 func GetProjects(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"DISAC":  "Data integrity system for academic credentials",
-		"Raptor": "Red team AI malware simulator",
-	})
+	c.JSON(200, store.Data.Projects)
 }
 
 func GetExperience(c *gin.Context) {
 	id := c.Param("id")
-	experiences := map[string]string{
-		"omni-tech": "Omni-Tech Solutions: SWE Intern",
-		"dragbin":   "Dragbin: SWE Intern",
-	}
 	if id == "" {
-		c.JSON(200, experiences)
+		c.JSON(200, store.Data.Experiences)
 		return
 	}
-	if exp, ok := experiences[id]; ok {
+	if exp, ok := store.Data.Experiences[id]; ok {
 		c.JSON(200, gin.H{"experience": exp})
 	} else {
 		c.JSON(404, gin.H{"error": "Experience not found"})
@@ -44,46 +35,25 @@ func GetExperience(c *gin.Context) {
 }
 
 func GetContact(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"Linkedin":     "LINKEDINURL",
-		"X / Twitter":  "XURL",
-		"Phone Number": "XXXXXXXX",
-		"Email":        "X@Y.com",
-	})
+	c.JSON(200, store.Data.Contact)
 }
 
 func GetBlog(c *gin.Context) {
-	c.Redirect(302, "https://blog.prasdud.com")
+	c.Redirect(302, store.Data.Blog.URL)
 }
 
 func GetAbout(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"Abdul": "who is he",
-	})
+	c.JSON(200, store.Data.About)
 }
 
 func GetEasterEgg1(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"Easter egg ": "#1",
-	})
+	c.JSON(200, store.Data.EasterEggs.Egg1)
 }
 
 func GetEasterEgg2(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"Easter egg": "#2",
-	})
+	c.JSON(200, store.Data.EasterEggs.Egg2)
 }
 
 func Help(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"/resume":         "Returns resume PDF",
-		"/skills":         "Returns skills JSON",
-		"/projects":       "Returns projects JSON",
-		"/experience/:id": "Returns experience details for given id",
-		"/contact":        "Returns contact information JSON",
-		"/blog":           "Redirects to blog URL",
-		"/about":          "Returns about information JSON",
-		"/easteregg1":     "Returns Easter Egg 1 JSON",
-		"/easteregg2":     "Returns Easter Egg 2 JSON",
-	})
+	c.JSON(200, store.Data.Help)
 }
