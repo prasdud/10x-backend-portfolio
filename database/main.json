@@ -2,18 +2,241 @@
   "ping": {
     "message": "pong"
   },
-  "skills": {
-    "Python": "Master",
-    "Go": "Proficient"
-  },
-  "projects": {
-    "DISAC": "Data integrity system for academic credentials",
-    "Raptor": "Red team AI malware simulator"
-  },
-  "experiences": {
-    "omni-tech": "Omni-Tech Solutions: SWE Intern",
-    "dragbin": "Dragbin: SWE Intern"
-  },
+  "skills": [
+    {
+      "name": "Python",
+      "level": "Master",
+      "category": "Programming Language"
+    },
+    {
+      "name": "Django",
+      "level": "Master",
+      "category": "Framework"
+    },
+    {
+      "name": "FastAPI",
+      "level": "Master",
+      "category": "Framework"
+    },
+    {
+      "name": "Go",
+      "level": "Master",
+      "category": "Programming Language"
+    },
+    {
+      "name": "React",
+      "level": "Working Knowledge",
+      "category": "Framework"
+    },
+    {
+      "name": "C/C++",
+      "level": "Intermediate",
+      "category": "Programming Language"
+    },
+    {
+      "name": "JavaScript",
+      "level": "Working Knowledge",
+      "category": "Programming Language"
+    },
+    {
+      "name": "Java",
+      "level": "Working Knowledge",
+      "category": "Programming Language"
+    },
+    {
+      "name": "Rust",
+      "level": "Working Knowledge",
+      "category": "Programming Language"
+    },
+    {
+      "name": "Postman",
+      "level": "Intermediate",
+      "category": "Tool"
+    },
+    {
+      "name": "VS Code",
+      "level": "Master",
+      "category": "Tool"
+    },
+    {
+      "name": "Git",
+      "level": "Intermediate",
+      "category": "Tool"
+    },
+    {
+      "name": "Docker",
+      "level": "Intermediate",
+      "category": "Tool"
+    },
+    {
+      "name": "SQL",
+      "level": "Intermediate",
+      "category": "Database"
+    },
+    {
+      "name": "MongoDB",
+      "level": "Working Knowledge",
+      "category": "Database"
+    },
+    {
+      "name": "REST API",
+      "level": "Intermediate",
+      "category": "Concept"
+    },
+    {
+      "name": "AWS/GCP",
+      "level": "Working Knowledge",
+      "category": "Cloud"
+    },
+    {
+      "name": "HTML/CSS",
+      "level": "Working Knowledge",
+      "category": "Web"
+    },
+    {
+      "name": "AI Tools",
+      "level": "Intermediate",
+      "category": "Tool"
+    },
+    {
+      "name": "DSA",
+      "level": "Intermediate",
+      "category": "Concept"
+    },
+    {
+      "name": "System Design",
+      "level": "Intermediate",
+      "category": "Concept"
+    }
+  ],
+  "projects": [
+    {
+      "id": "web-crawlers",
+      "name": "Web Crawlers",
+      "description": "Built 3 for different scraping needs",
+      "technologies": ["Python"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "disac",
+      "name": "DISAC - Data Integrity System for Academic Credentials",
+      "description": "Data integrity system for academic credentials using blockchain principles and cryptography, built from scratch",
+      "technologies": ["C++", "Blockchain", "Cryptography"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "profanity-detection",
+      "name": "Profanity Detection Using Logistic Regression Algorithms",
+      "description": "Detects profanity in music, gets song lyrics from external API",
+      "technologies": ["Python", "ML"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "pdf-cover-extractor",
+      "name": "PDF Cover Extractor",
+      "description": "Extracts first page of PDF and converts to PNG",
+      "technologies": ["Python"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "steg-plus-plus",
+      "name": "Steg Plus Plus",
+      "description": "Hides PDF inside PNG and can retrieve it back",
+      "technologies": ["C++"],
+      "status": "IN PROGRESS"
+    },
+    {
+      "id": "rock-paper-scissor-blockchain",
+      "name": "Rock Paper Scissor Blockchain",
+      "description": "Rock paper scissor game with winner stored in blockchain",
+      "technologies": ["Node.js", "Blockchain"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "video-decryptor",
+      "name": "On Demand Chunked Video Decryptor",
+      "description": "Splits video, encrypts in chunks, can be decrypted and played back with seamless playback",
+      "technologies": ["Python", "Cryptography"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "course-feedback",
+      "name": "Course Feedback System",
+      "description": "Course feedback system built for assignment",
+      "technologies": ["Django"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "trng",
+      "name": "TRNG",
+      "description": "True hardware random number generator",
+      "technologies": ["FastAPI"],
+      "status": "IN PROGRESS"
+    },
+    {
+      "id": "speech-emotion-lstm",
+      "name": "Speech Emotion LSTM",
+      "description": "Detects emotion in speech, streaming approach in backend using WebSockets for real-time updates",
+      "technologies": ["Python", "AI", "RNN"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "spacerep",
+      "name": "Spacerep",
+      "description": "Spaced repetition software that connects directly to Google Calendar to remind you to study",
+      "technologies": ["Python"],
+      "status": "IN PROGRESS"
+    },
+    {
+      "id": "go-rtcs",
+      "name": "Go-RTCS",
+      "description": "Real-time chat server",
+      "technologies": ["Go"],
+      "status": "COMPLETE"
+    },
+    {
+      "id": "raptor",
+      "name": "RAPTOR",
+      "description": "Red team AI malware simulator that simulates AI-driven malware on victim systems",
+      "technologies": ["Cybersecurity", "AI", "Django"],
+      "status": "COMPLETE"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "omni-tech",
+      "company": "Omni-Tech Solutions",
+      "position": "SWE Intern",
+      "duration": "6 months",
+      "type": "Small-sized US company",
+      "description": "Worked on real project"
+    },
+    {
+      "id": "stealth-startup",
+      "company": "Stealth Startup",
+      "position": "SWE Intern",
+      "duration": "5 days",
+      "type": "Early stage startup",
+      "description": ""
+    },
+    {
+      "id": "dragbin",
+      "company": "DragBin",
+      "position": "SWE Intern",
+      "duration": "3 months",
+      "type": "Startup",
+      "description": "Currently working on core product"
+    }
+  ],
+  "certifications": [
+    "Postman Certified",
+    "Multiple Udemy certifications",
+    "AWS Solutions Architect Associate (in progress)"
+  ],
+  "achievements": [
+    "Top 5% on codewars.com",
+    "Maintains a tech blog at blog.prasdud.com"
+  ],
   "contact": {
     "Linkedin": "LINKEDINURL",
     "X / Twitter": "XURL",

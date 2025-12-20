@@ -6,13 +6,36 @@ import (
 	"os"
 )
 
+type Skill struct {
+	Name     string `json:"name"`
+	Level    string `json:"level"`
+	Category string `json:"category"`
+}
+
+type Project struct {
+	ID           string   `json:"id"`
+	Name         string   `json:"name"`
+	Description  string   `json:"description"`
+	Technologies []string `json:"technologies"`
+	Status       string   `json:"status"`
+}
+
+type Experience struct {
+	ID          string `json:"id"`
+	Company     string `json:"company"`
+	Position    string `json:"position"`
+	Duration    string `json:"duration"`
+	Type        string `json:"type"`
+	Description string `json:"description"`
+}
+
 type PortfolioData struct {
 	Ping struct {
 		Message string `json:"message"`
 	} `json:"ping"`
-	Skills      map[string]string `json:"skills"`
-	Projects    map[string]string `json:"projects"`
-	Experiences map[string]string `json:"experiences"`
+	Skills      []Skill           `json:"skills"`
+	Projects    []Project         `json:"projects"`
+	Experiences []Experience      `json:"experiences"`
 	Contact     map[string]string `json:"contact"`
 	Blog        struct {
 		URL string `json:"url"`
@@ -22,7 +45,9 @@ type PortfolioData struct {
 		Egg1 map[string]string `json:"egg1"`
 		Egg2 map[string]string `json:"egg2"`
 	} `json:"easterEggs"`
-	Help map[string]string `json:"help"`
+	Help           map[string]string `json:"help"`
+	Certifications []string          `json:"certifications"`
+	Achievements   []string          `json:"achievements"`
 }
 
 var Data *PortfolioData

@@ -14,7 +14,32 @@ func GetResume(c *gin.Context) {
 }
 
 func GetSkills(c *gin.Context) {
-	c.JSON(200, store.Data.Skills)
+	// Get query parameters
+	level := c.Query("level")
+	category := c.Query("category")
+
+	// If no filters, return all skills
+	if level == "" && category == "" {
+		c.JSON(200, store.Data.Skills)
+		return
+	}
+
+	// Filter skills based on query params
+	filtered := []store.Skill{}
+	for _, skill := range store.Data.Skills {
+		match := true
+		if level != "" && skill.Level != level {
+			match = false
+		}
+		if category != "" && skill.Category != category {
+			match = false
+		}
+		if match {
+			filtered = append(filtered, skill)
+		}
+	}
+
+	c.JSON(200, filtered)
 }
 
 func GetProjects(c *gin.Context) {
@@ -27,11 +52,14 @@ func GetExperience(c *gin.Context) {
 		c.JSON(200, store.Data.Experiences)
 		return
 	}
-	if exp, ok := store.Data.Experiences[id]; ok {
-		c.JSON(200, gin.H{"experience": exp})
-	} else {
-		c.JSON(404, gin.H{"error": "Experience not found"})
+	// Find experience by id
+	for _, exp := range store.Data.Experiences {
+		if exp.ID == id {
+			c.JSON(200, exp)
+			return
+		}
 	}
+	c.JSON(404, gin.H{"error": "Experience not found"})
 }
 
 func GetContact(c *gin.Context) {
