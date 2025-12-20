@@ -32,6 +32,10 @@ func GetExperience(c *gin.Context) {
 		"omni-tech": "Omni-Tech Solutions: SWE Intern",
 		"dragbin":   "Dragbin: SWE Intern",
 	}
+	if id == "" {
+		c.JSON(200, experiences)
+		return
+	}
 	if exp, ok := experiences[id]; ok {
 		c.JSON(200, gin.H{"experience": exp})
 	} else {

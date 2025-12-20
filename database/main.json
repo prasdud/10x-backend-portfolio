@@ -1,0 +1,48 @@
+{
+  "ping": {
+    "message": "pong"
+  },
+  "skills": {
+    "Python": "Master",
+    "Go": "Proficient"
+  },
+  "projects": {
+    "DISAC": "Data integrity system for academic credentials",
+    "Raptor": "Red team AI malware simulator"
+  },
+  "experiences": {
+    "omni-tech": "Omni-Tech Solutions: SWE Intern",
+    "dragbin": "Dragbin: SWE Intern"
+  },
+  "contact": {
+    "Linkedin": "LINKEDINURL",
+    "X / Twitter": "XURL",
+    "Phone Number": "XXXXXXXX",
+    "Email": "X@Y.com"
+  },
+  "blog": {
+    "url": "https://blog.prasdud.com"
+  },
+  "about": {
+    "Abdul": "who is he"
+  },
+  "easterEggs": {
+    "egg1": {
+      "Easter egg ": "#1"
+    },
+    "egg2": {
+      "Easter egg": "#2"
+    }
+  },
+  "help": {
+    "/resume": "Returns resume PDF",
+    "/skills": "Returns skills JSON",
+    "/projects": "Returns projects JSON",
+    "/experience/:id": "Returns experience details for given id",
+    "/contact": "Returns contact information JSON",
+    "/blog": "Redirects to blog URL",
+    "/about": "Returns about information JSON",
+    "/easteregg1": "Returns Easter Egg 1 JSON",
+    "/easteregg2": "Returns Easter Egg 2 JSON"
+  }
+}
