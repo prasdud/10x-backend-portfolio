@@ -9,6 +9,9 @@ Go.
 Fast.
 Goodbye UI/UX, hello curl.
 
+# Status, Dev Notes
+Actively working on this
+
 ## TODO
 
 - setup query params for other stuff
