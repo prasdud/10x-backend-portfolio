@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"strings"
+
 	"github.com/gin-gonic/gin"
 	"github.com/prasdud/10x-backend-portfolio/internal/store"
 )
@@ -28,10 +30,10 @@ func GetSkills(c *gin.Context) {
 	filtered := []store.Skill{}
 	for _, skill := range store.Data.Skills {
 		match := true
-		if level != "" && skill.Level != level {
+		if level != "" && !strings.EqualFold(skill.Level, level) {
 			match = false
 		}
-		if category != "" && skill.Category != category {
+		if category != "" && !strings.EqualFold(skill.Category, category) {
 			match = false
 		}
 		if match {
