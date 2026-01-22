@@ -8,7 +8,7 @@ import (
 )
 
 func Ping(c *gin.Context) {
-	c.JSON(200, gin.H{"message": store.Data.Ping.Message})
+	c.IndentedJSON(200, gin.H{"message": store.Data.Ping.Message})
 }
 
 func GetResume(c *gin.Context) {
@@ -22,7 +22,7 @@ func GetSkills(c *gin.Context) {
 
 	// If no filters, return all skills
 	if level == "" && category == "" {
-		c.JSON(200, store.Data.Skills)
+		c.IndentedJSON(200, store.Data.Skills)
 		return
 	}
 
@@ -41,31 +41,31 @@ func GetSkills(c *gin.Context) {
 		}
 	}
 
-	c.JSON(200, filtered)
+	c.IndentedJSON(200, filtered)
 }
 
 func GetProjects(c *gin.Context) {
-	c.JSON(200, store.Data.Projects)
+	c.IndentedJSON(200, store.Data.Projects)
 }
 
 func GetExperience(c *gin.Context) {
 	id := c.Param("id")
 	if id == "" {
-		c.JSON(200, store.Data.Experiences)
+		c.IndentedJSON(200, store.Data.Experiences)
 		return
 	}
 	// Find experience by id
 	for _, exp := range store.Data.Experiences {
 		if exp.ID == id {
-			c.JSON(200, exp)
+			c.IndentedJSON(200, exp)
 			return
 		}
 	}
-	c.JSON(404, gin.H{"error": "Experience not found"})
+	c.IndentedJSON(404, gin.H{"error": "Experience not found"})
 }
 
 func GetContact(c *gin.Context) {
-	c.JSON(200, store.Data.Contact)
+	c.IndentedJSON(200, store.Data.Contact)
 }
 
 func GetBlog(c *gin.Context) {
@@ -73,17 +73,17 @@ func GetBlog(c *gin.Context) {
 }
 
 func GetAbout(c *gin.Context) {
-	c.JSON(200, store.Data.About)
+	c.IndentedJSON(200, store.Data.About)
 }
 
 func GetEasterEgg1(c *gin.Context) {
-	c.JSON(200, store.Data.EasterEggs.Egg1)
+	c.IndentedJSON(200, store.Data.EasterEggs.Egg1)
 }
 
 func GetEasterEgg2(c *gin.Context) {
-	c.JSON(200, store.Data.EasterEggs.Egg2)
+	c.IndentedJSON(200, store.Data.EasterEggs.Egg2)
 }
 
 func Help(c *gin.Context) {
-	c.JSON(200, store.Data.Help)
+	c.IndentedJSON(200, store.Data.Help)
 }
