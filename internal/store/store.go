@@ -53,7 +53,7 @@ type PortfolioData struct {
 var Data *PortfolioData
 
 func Init() error {
-	file, err := os.ReadFile("../../database/main.json")
+	file, err := os.ReadFile("database/main.json")
 	if err != nil {
 		return err
 	}

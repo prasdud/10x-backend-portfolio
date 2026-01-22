@@ -1,0 +1,13 @@
+services:
+  api:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "7741:7741"
+    volumes:
+      - .:/app
+    environment:
+      - GIN_MODE=debug
+    stdin_open: true
+    tty: true
