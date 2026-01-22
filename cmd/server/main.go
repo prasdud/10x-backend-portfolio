@@ -16,19 +16,27 @@ func main() {
 
 	r := gin.Default()
 
-	v1 := r.Group("/api/v1")
-	v1.GET("/ping", handlers.Ping)
-	v1.GET("/resume", handlers.GetResume)
-	v1.GET("/skills", handlers.GetSkills)
-	v1.GET("/projects", handlers.GetProjects)
-	v1.GET("/experience", handlers.GetExperience)
-	v1.GET("/experience/:id", handlers.GetExperience)
-	v1.GET("/contact", handlers.GetContact)
-	v1.GET("/blog", handlers.GetBlog)
-	v1.GET("/about", handlers.GetAbout)
-	v1.GET("/easteregg1", handlers.GetEasterEgg1)
-	v1.GET("/easteregg2", handlers.GetEasterEgg2)
-	v1.GET("/help", handlers.Help)
+	version_enabled := false
+	var version *gin.RouterGroup
+
+	if version_enabled {
+		version = r.Group("api/v1")
+	} else {
+		version = r.Group("/")
+	}
+
+	version.GET("/ping", handlers.Ping)
+	version.GET("/resume", handlers.GetResume)
+	version.GET("/skills", handlers.GetSkills)
+	version.GET("/projects", handlers.GetProjects)
+	version.GET("/experience", handlers.GetExperience)
+	version.GET("/experience/:id", handlers.GetExperience)
+	version.GET("/contact", handlers.GetContact)
+	version.GET("/blog", handlers.GetBlog)
+	version.GET("/about", handlers.GetAbout)
+	version.GET("/easteregg1", handlers.GetEasterEgg1)
+	version.GET("/easteregg2", handlers.GetEasterEgg2)
+	version.GET("/help", handlers.Help)
 
 	r.Run(":7741")
 }
